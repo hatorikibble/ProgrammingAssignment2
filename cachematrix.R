@@ -1,10 +1,12 @@
 ## Coursera Programming Assignment 2
 ## caching the inverse of a matrix
 
-## makeCacheMatrix
-## create a matrix object, with the following functions
-## * get
-## * set
+## makeCacheMatrix(x)
+# create a matrix object, with the following functions
+# * get - return the matrix data
+# * set - update the matrix data
+# * setinverse - save value in cache
+# * getinverse - retriev value from cache
 
 makeCacheMatrix <- function(x = matrix()) {
   i <- NULL
@@ -21,7 +23,10 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## cacheSolve(x)
+# Return a matrix that is the inverse of 'x'
+# the result is then cached and used
+# if the function is run again on the same matrix
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
@@ -31,7 +36,6 @@ cacheSolve <- function(x, ...) {
     return(i)
   }
   matrix <- x$get()
-  #i <- solve(matrix) %*% matrix
   i <- solve(matrix)
   x$setinverse(i)
   i
